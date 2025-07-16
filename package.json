@@ -1,0 +1,23 @@
+{
+  "name": "@isdream/oauth",
+  "version": "1.0.0",
+  "description": "快速接入 isdream oauth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isdreamcn/npm-oauth.git"
+  },
+  "keywords": [
+    "isdream",
+    "oauth"
+  ],
+  "author": "mtm2233",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isdreamcn/npm-oauth/issues"
+  },
+  "homepage": "https://github.com/isdreamcn/npm-oauth#readme"
+}
