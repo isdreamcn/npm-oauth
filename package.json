@@ -4,7 +4,15 @@
   "description": "快速接入 isdream oauth",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz",
+    "prepare": "husky install",
+    "preinstall": "node ./scripts/preinstall.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "repository": {
     "type": "git",
@@ -19,5 +27,12 @@
   "bugs": {
     "url": "https://github.com/isdreamcn/npm-oauth/issues"
   },
-  "homepage": "https://github.com/isdreamcn/npm-oauth#readme"
+  "homepage": "https://github.com/isdreamcn/npm-oauth#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0"
+  }
 }
