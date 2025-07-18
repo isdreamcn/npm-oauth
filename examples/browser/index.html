@@ -1,15 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>examples</title>
-  <script src="isdream-oauth.js"></script>
-  <script>
-    console.log(isdreamOAuth);
-  </script>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>examples</title>
+    <script src="isdream-oauth.js"></script>
+    <style>
+      button {
+        display: flex;
+        align-items: center;
+      }
+      button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="codeLogin">
+      <img src="" alt="" />
+      isdream code 登录
+    </button>
+
+    <button id="implicitLogin">
+      <img src="" alt="" />
+      isdream implicit 登录
+    </button>
+
+    <script>
+      const { FAVICON_URL, useCodeLogin } = isdreamOAuth
+
+      // codeLogin
+      const { oauthLoginTo, oauthLoginCallback } = useCodeLogin({
+        client_id: 'PcvDO3Dwh62YZdF8Iv8aN',
+        redirect_uri: 'https://s.isdream.cn/home'
+      })
+      const codeLoginBtn = document.querySelector('#codeLogin')
+      codeLoginBtn.querySelector('img').src = FAVICON_URL
+      codeLoginBtn.onclick = oauthLoginTo
+
+      oauthLoginCallback()
+        .then((res) => {
+          // 将code、code_verifier发送到后端
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log('登录失败')
+          console.log(err)
+        })
+    </script>
+  </body>
 </html>

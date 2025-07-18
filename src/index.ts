@@ -1,4 +1,3 @@
-export const num = (a: number, b: number) => {
-  console.log(a + b)
-  return a + b
-}
+export * from './config'
+export * from './useCodeLogin'
+export * from './useImplicitLogin'
