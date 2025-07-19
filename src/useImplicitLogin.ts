@@ -1,6 +1,5 @@
-import { OAUTH_URL } from './config'
-import { generateState, generateNonce } from './utils'
-import { jwtDecode } from 'jwt-decode'
+import { OAUTH_URL, OAUTH_ISS } from './config'
+import { generateState, generateNonce, jwtDecode } from './utils'
 
 interface ImplicitLoginOptions {
   client_id: string
@@ -20,7 +19,7 @@ interface ImplicitLoginCallback {
     aud: string
     exp: number
     iat: number
-    iss: 'https://account.isdream.cn'
+    iss: typeof OAUTH_ISS
   }
 }
 

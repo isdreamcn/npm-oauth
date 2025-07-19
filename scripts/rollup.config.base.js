@@ -23,12 +23,19 @@ const outputBase = { name: 'isdreamOAuth', banner }
 
 export default {
   input: 'src/index.ts',
+  external: ['axios'],
   output: [
-    { file: `dist/${pkgName}.js`, format: 'umd', ...outputBase },
+    {
+      file: `dist/${pkgName}.js`,
+      format: 'umd',
+      ...outputBase,
+      globals: { axios: 'axios' }
+    },
     {
       file: `dist/${pkgName}.min.js`,
       format: 'umd',
       ...outputBase,
+      globals: { axios: 'axios' },
       plugins: [terser()]
     },
     { file: `dist/${pkgName}.cjs.js`, format: 'cjs', banner },
