@@ -1,4 +1,3 @@
-// src/service/index.ts
 import { OAUTH_API_URL } from '../config'
 import { createService } from './createService'
 

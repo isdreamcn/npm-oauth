@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
       button {
         display: flex;
         align-items: center;
+        display: none;
       }
       button img {
         width: 20px;
@@ -29,7 +30,7 @@
     </button>
 
     <script>
-      const { FAVICON_URL, useCodeLogin } = isdreamOAuth
+      const { FAVICON_URL, useCodeLogin, useImplicitLogin } = isdreamOAuth
 
       // codeLogin
       const { oauthLoginTo, oauthLoginCallback } = useCodeLogin({
@@ -37,6 +38,7 @@
         redirect_uri: 'https://s.isdream.cn/home'
       })
       const codeLoginBtn = document.querySelector('#codeLogin')
+      codeLoginBtn.style.display = 'block'
       codeLoginBtn.querySelector('img').src = FAVICON_URL
       codeLoginBtn.onclick = oauthLoginTo
 
@@ -49,6 +51,25 @@
           console.log('登录失败')
           console.log(err)
         })
+
+      // implicit Login
+      // const { oauthLoginTo, oauthLoginCallback } = useImplicitLogin({
+      //   client_id: 'PcvDO3Dwh62YZdF8Iv8aN',
+      //   redirect_uri: 'https://s.isdream.cn/home'
+      // })
+      // const implicitLoginBtn = document.querySelector('#implicitLogin')
+      // implicitLoginBtn.style.display = 'block'
+      // implicitLoginBtn.querySelector('img').src = FAVICON_URL
+      // implicitLoginBtn.onclick = oauthLoginTo
+
+      // oauthLoginCallback()
+      //   .then((res) => {
+      //     console.log(res)
+      //   })
+      //   .catch((err) => {
+      //     console.log('登录失败')
+      //     console.log(err)
+      //   })
     </script>
   </body>
 </html>
