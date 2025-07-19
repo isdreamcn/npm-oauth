@@ -1,5 +1,6 @@
-import { oauthApiToken, oauthApiMe } from '@isdream/oauth'
+import { oauthApiToken, oauthApiMe } from 'isdream-oauth'
 
+// 1. 用 code 换 token
 oauthApiToken({
   client_id: 'PcvDO3Dwh62YZdF8Iv8aN',
   redirect_uri: 'https://s.isdream.cn/home',
@@ -11,6 +12,7 @@ oauthApiToken({
   console.log(res);
 })
 
+// 2. 获取用户信息
 oauthApiMe({ access_token: '' }).then(res => {
   console.log(res);
 })

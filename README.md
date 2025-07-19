@@ -1,4 +1,4 @@
-# @isdream/oauth
+# isdream-oauth
 
 **一款「开箱即用」的 isdream 统一登录封装库**
 [官方文档](https://account.isdream.cn/accessOAuth/openIDConnect)
@@ -6,7 +6,7 @@
 ## 安装
 
 ```bash
-npm install @isdream/oauth
+npm install isdream-oauth
 ```
 
 ## 使用示例
@@ -46,7 +46,7 @@ npm install @isdream/oauth
 </template>
 
 <script setup>
-import { useCodeLogin } from '@isdream/oauth'
+import { useCodeLogin } from 'isdream-oauth'
 
 const { oauthLoginTo, oauthLoginCallback } = useCodeLogin({
   client_id: 'PcvDO3Dwh62YZdF8Iv8aN',
@@ -62,7 +62,7 @@ oauthLoginCallback()
 ### OAuth API
 
 ```javascript
-import { oauthApiToken, oauthApiMe } from '@isdream/oauth'
+import { oauthApiToken, oauthApiMe } from 'isdream-oauth'
 
 // 1. 用 code 换 token
 oauthApiToken({
