@@ -1,6 +1,6 @@
 {
   "name": "isdream-oauth",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "一款「开箱即用」的 isdream 统一登录封装库",
   "type": "module",
   "main": "index.js",
@@ -8,6 +8,10 @@
   "types": "dist/isdream-oauth.d.ts",
   "unpkg": "dist/isdream-oauth.min.js",
   "jsdelivr": "dist/isdream-oauth.min.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "scripts": {
     "dev": "rollup -w --environment NODE_ENV:development -c scripts/rollup.config.dev.js",
     "build": "rollup --environment NODE_ENV:production -c scripts/rollup.config.prod.js",
