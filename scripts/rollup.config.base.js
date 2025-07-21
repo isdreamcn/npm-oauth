@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs-extra'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import alias from '@rollup/plugin-alias'
@@ -8,11 +9,11 @@ import typescript from '@rollup/plugin-typescript'
 import { babel } from '@rollup/plugin-babel'
 import terser from '@rollup/plugin-terser'
 import clear from 'rollup-plugin-clear'
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url)
-const { name, version, author } = require('../package.json')
+
+const { name, version, author } = fs.readJsonSync('package.json')
 
 export const pkgName = 'isdream-oauth'
+
 const banner = `/*!
  * ${name} v${version}
  * (c) 2025 ${author}
@@ -54,7 +55,7 @@ export default {
     }
   ],
   plugins: [
-    clear({ targets: ['dist'] }),
+    clear({ targets: ['dist', 'publish'] }),
     alias({
       entries: [{ find: '@', replacement: path.resolve('src') }]
     }),
