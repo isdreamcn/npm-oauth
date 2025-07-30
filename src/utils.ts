@@ -54,5 +54,3 @@ export async function generateCodeChallenge(verifier: string) {
   const digest = await window.crypto.subtle.digest('SHA-256', data)
   return base64URLEncode(new Uint8Array(digest)) // 哈希后Base64URL编码
 }
-
-export { jwtDecode } from 'jwt-decode'

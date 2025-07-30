@@ -89,7 +89,6 @@ oauthApiMe({ access_token: '上一步返回的 access_token' }).then(res => {
 | useImplicitLogin | 隐式授权（不推荐），使用同 `useCodeLogin` |
 | oauthApiToken    | 用 code 换 token                          |
 | oauthApiMe       | 用 token 获取用户信息                     |
-| jwtDecode        | 解析 JWT                                  |
 
 ## 常量速查
 
@@ -103,4 +102,3 @@ oauthApiMe({ access_token: '上一步返回的 access_token' }).then(res => {
 ## License
 
 MIT
-

@@ -1,5 +1,6 @@
+import { jwtDecode } from 'jwt-decode'
 import { OAUTH_URL, OAUTH_ISS } from './config'
-import { generateState, generateNonce, jwtDecode } from './utils'
+import { generateState, generateNonce } from './utils'
 
 interface ImplicitLoginOptions {
   client_id: string
